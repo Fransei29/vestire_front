@@ -52,4 +52,4 @@ const pool = new Pool({
 // Prueba para corroborar el correcto entrelazamiento de las variables de entorno
 console.log(process.env.PASSWORD);
 
-app.listen(3000, () => console.log('Server ready'));  // Inicia el servidor en el puerto 3000 y registra un mensaje.
+app.listen(3001, () => console.log('Server ready'));  // Inicia el servidor en el puerto 3000 y registra un mensaje.
