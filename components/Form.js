@@ -28,7 +28,7 @@ function Form() {
             <input
               type="text"
               id="username"
-              placeholder="Nombre de usuario"
+              placeholder="User name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -36,12 +36,12 @@ function Form() {
             <input
               type="password"
               id="password"
-              placeholder="Contraseña"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type="submit">Registrarse</button>
+            <button type="submit">Sign up</button>
           </form>
 
           {/* Formulario de inicio de sesión */}
@@ -49,7 +49,7 @@ function Form() {
             <input
               type="text"
               id="loginUsername"
-              placeholder="Nombre de usuario"
+              placeholder="User name"
               value={loginUsername}
               onChange={(e) => setLoginUsername(e.target.value)}
               required
@@ -57,18 +57,18 @@ function Form() {
             <input
               type="password"
               id="loginPassword"
-              placeholder="Contraseña"
+              placeholder="Password"
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
               required
             />
-            <button type="submit">Iniciar sesión</button>
+            <button type="submit">Log in</button>
           </form>
         </div>
 
         <div>
           <h2 className="Newform">
-            Descubre lo nuevo en <strong>Vestiré</strong>
+            Discover the new in <strong>Vestiré</strong>
           </h2>
         </div>
       </div>

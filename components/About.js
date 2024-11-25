@@ -2,16 +2,16 @@ import React from 'react';
 
 function About() {
   return (
-    <div className="About">
-          <h2>Acerca de Nosotros</h2>
+    <div className="About" id='Notro'>
+          <h2>About Us</h2>
           <p className="textoAbout">
-            Ubicados en el corazón de Villa del Rosario, frente a la emblemática plaza del pueblo,
-            nuestra tienda de ropa ha sido un punto de encuentro para la moda y la comunidad local
-            desde hace varias décadas. Con un compromiso arraigado en ofrecer calidad y estilo, nos
-            enorgullece ser una parte integral del tejido social de nuestra ciudad, proporcionando a
-            nuestros clientes piezas que les encantan y en las que confían. Visítanos para descubrir
-            colecciones que combinan tradición y tendencias actuales, todo ello en el ambiente más
-            acogedor de Villa del Rosario.
+          Located in the heart of Villa del Rosario, across from the iconic town square,
+          our clothing store has been a meeting point for fashion and the local community
+          for several decades. With a deep-rooted commitment to delivering quality and style, we are
+          proud to be an integral part of the social fabric of our city, providing
+          our customers with pieces they love and trust. Visit us to discover
+          collections that combine tradition and current trends, all in the most welcoming
+          atmosphere in Villa del Rosario.
           </p>
     </div>
   );

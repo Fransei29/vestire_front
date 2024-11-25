@@ -11,13 +11,9 @@ function Header() {
                 <h1 id="logoo">Vestiré</h1>
                 </div>
                 <div className="secondary-full">
-                <a id="sua" href="#Notro">
-                    Acerca de nosotros
-                </a>
-                <a href="#ubi">Ubicacion</a>
-                <Link href="/products">
-                    <>Tienda</>
-                </Link>
+                <a id="sua" href="#Notro">About us</a>
+                <a href="#ubi">Location</a>
+                <a href="#carro">Shop</a>
                 </div>
             </div>
        </nav>

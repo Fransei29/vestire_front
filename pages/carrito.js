@@ -1,22 +1,26 @@
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 
 // Definición de la CLASE Producto
 class Producto {
-    constructor(id, nombre, precio, imagen) {
+    constructor(id, nombre, descripcion, precio, imagen) {
         this.id = id;
         this.nombre = nombre;
+        this.descripcion = descripcion;
         this.precio = precio;
         this.imagen = imagen;
     }
 }
 
 const productosIniciales = [
-    new Producto(1, 'Zapatilla', 50, 'zapatilla'),
-    new Producto(2, 'Ojota', 20, 'ojota'),
-    new Producto(3, 'Pantalon', 30, 'pantalones_1203-8308.jpg'),
-    new Producto(4, 'Remera', 30, 'remera'),
-    new Producto(5, 'Campera', 50, 'campera'),
-    new Producto(6, 'Lentes', 40, 'lentes')
+    new Producto(1, 'Sneakers','Sports shoe. Upper in a combination of materials', 50, 'zapatilla'),
+    new Producto(2, 'Sandals',' Open-toe sandals with adjustable straps', 20, 'ojota'),
+    new Producto(3, 'Trousers','Straight-leg trousers with a zip fly and side pockets', 30, 'pantalones_1203-8308.jpg'),
+    new Producto(4, 'T-shirt','Cotton T-shirt with a round neck and short sleeves', 30, 'remera'),
+    new Producto(5, 'Jacket',' Lightweight jacket with a hood and zip fastening', 50, 'campera'),
+    new Producto(6, 'Sunglasses',' Sleek sunglasses with UV protection and a matte finish', 40, 'lentes')
 ];
 
 export default function Carrito() {
@@ -93,23 +97,25 @@ export default function Carrito() {
                             <div className={`ali Art${index + 1}`} key={producto.id}>
                                 <img src={`/img/${producto.imagen}`} alt={producto.nombre} />
                                 <h3>{producto.nombre}</h3>
-                                <p>Precio: ${producto.precio}</p>
-                                <button className="buttonplace" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+                                <p className='description-product'>{producto.descripcion}</p>
+                                <p>${producto.precio}</p>
+                                <button className="buttonplace" onClick={() => agregarAlCarrito(producto)}>Add to Cart</button>
                             </div>
                         ))}
                     </div>
 
-                    <div className="Carrito">
-                        <h2 className="titleCarro">Carrito de compras</h2>
+                    <div id='carro' className="Carrito">
+                        <h2 className="titleCarro">Your Shopping Cart</h2>
+                        <h1 className='icon-carrito'><FontAwesomeIcon icon={faCartShopping} /></h1>
                         <ul id="cartItems">
                             {cart.map((product, index) => (
                                 <li key={index}>
-                                    {product.nombre} - Cantidad: {product.cantidad}
+                                    {product.nombre} [ {product.cantidad} ]
                                 </li>
                             ))}
                         </ul>
                         <p id="totalPrice">Total: ${totalPrice}</p>
-                        <button id="comprar-btn" onClick={handleComprar}>Comprar</button>
+                        <button id="comprar-btn" onClick={handleComprar}>Buy</button>
                     </div>
                 </div>
     );
