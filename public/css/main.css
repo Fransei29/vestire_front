@@ -38,16 +38,16 @@ html, body {
 /* Estilos para la sección del título y la navegación */
 .TiName { 
   width: 100%;
-  height: auto;
+  height:100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row-reverse;
-  font-size: 22px;
-  background-color: rgb(174, 176, 63);
-  color: rgb(29, 28, 28);
+  font-size: 2rem;
+  background: linear-gradient(135deg, #faeca5, #fad655);
+  color: rgb(26, 26, 26);
   grid-area: TiName;
-  padding: 13%;
+  padding: 6rem;
 }
 
 #Nombre, #Aqui, #Alla, #Agradezco {
@@ -202,14 +202,14 @@ font-style: normal;
   overflow: hidden;
   font-family: sans-serif;
   font-size: 17px;
-  background-color:rgba(197, 200, 27, 0.9);
+  background-color:rgba(241, 241, 241, 0.7);
 }
 
 .ali {
   flex: 1; 
   color: rgb(45, 44, 44);
   min-width: 200px; 
-  border: solid rgba(0, 0, 0, 0.215) 2px;
+  border:1px solid rgba(0, 0, 0, 0.2);
   background-color: rgb(246, 244, 244);
   border-radius: 6px;
   display: flex;
@@ -257,7 +257,7 @@ font-style: normal;
 .Carrito { 
   color: rgb(44, 44, 44);
   font-size: 15px;
-  background-color:rgba(197, 200, 27, 0.9);
+  background-color:rgba(241, 241, 241, 0.7);
   padding-bottom: 3%;
   display: flex;
   flex-direction: column;
@@ -291,12 +291,12 @@ font-style: normal;
 }
 
 .buttonplace {
-  background-color: #0c0547;
+  background-color: #0b0161;
   margin-bottom: 10px;
   font-size: 15px;
   padding: 9px 25px;
   border-style: none;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .buttonplace:hover {
@@ -313,7 +313,7 @@ cursor: pointer;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: rgba(243, 243, 243, 0.5);
   z-index: 5;
   font-size: 20px;
   padding: 3%;
@@ -367,6 +367,7 @@ form {
   left: 0;
   height: auto;
   margin: 30px;
+  border-radius: 4px;
 }
 
 input[type="text"], input[type="password"] {
@@ -381,7 +382,7 @@ button {
   color: white;
   padding: 7px 30px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer; /* Cursor tipo puntero para indicar clic */
   font-size: 15px;
   /* font-weight: bold; */
