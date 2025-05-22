@@ -1,400 +1,599 @@
-/* Configuración básica del cuerpo y la fuente */
-html, body {
-    font-family: sans-serif;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
-}
-  
-/* Asegurar que todos los elementos incluyan padding y border en el tamaño total */
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-/* Asegurar que todos los elementos tengan un ancho máximo del 100% */
-.TiName, .About, .Send, .Locat, .Pie {
-  width: 100%;
-  max-width: 100%; /* Añadir esta línea */
-  overflow: hidden; /* Para evitar cualquier contenido desbordante */
-}
-
-  /* Establece la estructura del contenedor principal usando grid */
-  .containerAqui {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: auto; /* Cambia las alturas de las filas a 'auto' para ajustar al contenido */
-    grid-template-areas:
-      "TiName"
-      "Shoping"
-      "About"
-      "ImgBack"
-      "Send"
-      "Pie";
-}
-  
-
 /* Estilos para la sección del título y la navegación */
-.TiName { 
-  width: 100%;
-  height:100vh;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #f7f5ee;
+  color: #1a1a1a;
+}
+
+/* Contenedor principal */
+.containerAqui {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff, #eee9d9);
+}
+
+/* Sección principal estilo banner */
+.TiName {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
-  font-size: 2rem;
-  background: linear-gradient(135deg, #faeca5, #fad655);
-  color: rgb(26, 26, 26);
-  grid-area: TiName;
-  padding: 6rem;
+  padding: 2rem 0;
+  max-width: 1100px;
+  margin-inline: auto;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-#Nombre, #Aqui, #Alla, #Agradezco {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 22px;
+.textoTiName {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #ffffffaa;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgb(11, 1, 97, 0.2);
+}
+
+input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #a08c4e;
+  box-shadow: 0 0 0 2px #f4e6b4;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgba(18, 2, 163, 0.3);
+
+  color: #252525; 
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ebebeb;
+}
+
+/* Título y subtítulo */
+.NewformMain {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
 }
 
 .Newform {
-font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #3a3a3a;
 }
 
-.TiPic { 
-  grid-area: TiPic;
-}  
+/* Responsive */
+@media (max-width: 768px) {
+  .TiName {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
 
-/* Configuración de la sección "Acerca de Nosotros" */
-.About { 
+  .NewformMain {
+    font-size: 3rem;
+  }
+
+  .textoTiName {
+    width: 100%;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.AboutContainer{
+  background-color: #ffffff;
+  min-height: 100vh;  
+  display: flex;
+}
+
+.About {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  height: auto;
+  justify-content: center;  
+  align-items: flex-start;  
+  max-width: 1100px;         
+  margin: 0 auto;           
+  box-sizing: border-box;
+}
+
+.About h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #0b0161; 
+  text-align: left; 
   width: 100%;
-  font-size: 19px;
-  grid-area: About;
-  padding-top: 11%;
-  padding-bottom: 11%;
-  word-spacing: 1px;
 }
 
 .textoAbout {
-  padding-right: 23%;
-  padding-left: 23%;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  text-align: left;
+  max-width: 100%;
+  font-size: 1.3rem;
+  line-height: 1.4;
 }
 
-.ImgBack { 
+/* Responsive */
+@media (max-width: 600px) {
+  .About {
+    padding: 1.5rem 1.5rem;
+    max-width: 95%;
+  }
+
+  .About h2 {
+    font-size: 2rem;
+  }
+
+  .textoAbout {
+    font-size: 1rem;
+  }
+}
+
+
+/* 🔹 Imagen de fondo */
+.ImgBack {
   background-image: url("/img/ase");
   background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 350px;
-  width: 100%; 
-  grid-area: ImgBack; 
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  grid-area: ImgBack;
 }
 
-/* Configuración de la sección de entrega */
-.Send { 
+/* 🔹 Sección de Entrega */
+.Send {
   grid-area: Send;
-  padding-right: 18%;
-  padding-left: 18%;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
 }
+
 .containerSend {
-  font-size: 19px;
-  word-spacing: 1px;
-  display: grid; 
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: auto;
-  width: 100%;
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-  "FirstPart"; 
+  font-size: 1.3rem;
+  line-height: 1.4;
+  max-width: 1100px;
+  margin: 0 auto;
 }
+
 .FirstPart {
-  grid-area: FirstPart;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  justify-self: center;
-}
-
-/* Configuración de la sección de localización */
-.Locat { grid-area: Locat; }
-.ContainerLocat {
-  height: 100%;
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "first second"; 
-}
-.pictureCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  grid-area: first;
-}
-.infoCont {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  grid-area: second;
-  font-size: 18px;
-}
-.Pat {
-  font-size: 18px;
-  padding-right: 5px;
-}
-.picNi {
-  height: 250px;
-  width: 250px;
-}
-
-/* Configuración de la sección del pie de pagina */
-.Pie { 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  background-color: rgb(29, 28, 28);
-  color: rgb(220, 220, 220);
-  height: auto;
   width: 100%;
-  grid-area: Pie;
-  overflow: hidden;
-  padding: 2%;
+  gap: 1rem;
+}
+  .FirstPart h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #0b0161; 
+    text-align: left; 
+    width: 100%;
   }
 
-  .Pie p {
-    margin: 5px;
-    font-size: 18px;
-    width: 100%;
+
+/* 🔸 Responsive para mobile */
+@media (max-width: 768px) {
+  .ContainerLocat {
+    grid-template-columns: 1fr;
+  }
+
+  .ImgBack {
+    background-attachment: scroll;
+    height: 200px;
+  }
+
+  .NewformMain {
+    font-size: 2.5rem;
+  }
+
+  .Newform {
+    font-size: 1rem;
+  }
+
+  .About, .Send, .Locat {
+    padding: 3rem 1rem;
+  }
+
+  .textoAbout, .containerSend {
+    padding: 0 1rem;
+  }
+
+  .picNi {
+    width: 180px;
+    height: 180px;
+  }
 }
 
+/* 🔻 Footer Moderno */
+.Pie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #1d1c1c;
+  color: #dcdcdc;
+  padding: 2rem;
+  width: 100%;
+  grid-area: Pie;
+  font-size: 0.95rem;
+}
 
+.Pie p {
+  margin: 0.25rem 0;
+  width: 100%;
+  text-align: right;
+}
 
-
-/* --- SHOPING */
-/* Configuración del Área de Productos */
+/* 🔷 Productos */
 #productos-container {
   grid-area: Shoping;
   display: flex;
-  padding-bottom: 1%;
-  padding-top: 1%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
   width: 100%;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-  font-family: sans-serif;
-  font-size: 17px;
-  background-color:rgba(241, 241, 241, 0.7);
+  background-color: rgba(241, 241, 241, 0.7);
+  font-family: 'Outfit', sans-serif;
 }
 
+/* 🔸 Card del producto */
 .ali {
-  flex: 1; 
-  color: rgb(45, 44, 44);
-  min-width: 200px; 
-  border:1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgb(246, 244, 244);
-  border-radius: 6px;
+  flex: 1 1 220px;
+  max-width: 220px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
-  margin: 13px;
-  padding-bottom: 1%;
 }
 
+
 .ali img {
-  border-radius: 6px;
   width: 100%;
-  height: 100%;
-  max-height: 270px;
+  max-height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
 .ali:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   cursor: pointer;
 }
 
 .description-product {
-  font-size: 14px;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-top: -6px;
-  margin-bottom: -6px;
+  font-size: 0.95rem;
+  padding: 1rem;
   text-align: center;
+  color: #2c2c2c;
 }
 
-#cartItems {
-  font-size: 18px;
+
+/* 🔧 Adaptación responsive */
+@media (max-width: 768px) {
+  #productos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ali {
+    max-width: 90%;
+  }
+
+  .description-product {
+    font-size: 1rem;
+  }
+
+  .buttonplace {
+    width: 100%;
+  }
 }
 
-#comprar-btn {
-  padding: 10px 15px;
-  font-size: 17px;
-  border-radius: 4px;
-}
 
-.Carrito { 
-  color: rgb(44, 44, 44);
-  font-size: 15px;
-  background-color:rgba(241, 241, 241, 0.7);
-  padding-bottom: 3%;
+/* 🛒 Carrito */
+.Carrito {
+  background-color: #f7f7f7;
+  color: #2c2c2c;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: stretch
+  align-items: stretch;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 350px;
+  margin: 3rem auto;
 }
 
 .titleCarro {
-  margin-bottom: -2px;
-  font-size: 28px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0b0161;
+  padding-bottom: 0.3rem;
+  color: #0b0161;
+  text-align: center;
 }
 
-.icon-carrito{
-  display: flex;
-  justify-content: center;
-  margin-bottom: -0.5px;
+.emptyCart {
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  padding: 2rem 0;
 }
 
-#cart {
-  padding: 20px;
+#cartItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.cart-item {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+  flex: 2;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-qty {
+  flex: 1;
+  text-align: center;
+  color: #555;
+}
+
+.product-price {
+  flex: 1;
+  text-align: right;
+  font-weight: 600;
+  color: #0b0161;
 }
 
 #totalPrice {
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  text-align: right;
+  color: #0b0161;
 }
 
 .buttonplace {
   background-color: #0b0161;
-  margin-bottom: 10px;
-  font-size: 15px;
-  padding: 9px 25px;
-  border-style: none;
-  border-radius: 8px;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .buttonplace:hover {
-cursor: pointer;
+  background-color: #1c1187;
+  cursor: pointer;
 }
 
-/* ---- Configuración e inicio del NAVBAR ---- */
-.desktop {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+/* Scrollbar styling for cart items */
+#cartItems::-webkit-scrollbar {
+  width: 6px;
+}
+
+#cartItems::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+#cartItems::-webkit-scrollbar-thumb {
+  background-color: #0b0161;
+  border-radius: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .Carrito {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .product-name, .product-qty {
+    font-size: 0.9rem;
+  }
+
+  .buttonplace {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+
+/* 📱 Responsive para mobile */
+@media (max-width: 768px) {
+  .Pie {
+    align-items: center;
+    text-align: center;
+  }
+
+  .Pie p {
+    text-align: center;
+  }
+
+  #productos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ali {
+    max-width: 90%;
+  }
+
+  .Carrito {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .titleCarro {
+    font-size: 1.5rem;
+  }
+}
+
+/* Navbar general */
+.navbar {
   position: fixed;
-  height: 11vh;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(243, 243, 243, 0.5);
-  z-index: 5;
+  background-color: transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
   font-size: 20px;
-  padding: 3%;
+  padding: 1rem 0;
 }
 
-.desktop a {
-  font-size: 22px;
-  padding: 20px;
-  color: black;
-  text-decoration: none;
-  transition: transform 0.3s ease; 
-}
-.desktop a:hover {
-  transform: scale(1.1);
-}
-.secondary-full {
+/* Contenedor interno para limitar ancho y centrar */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
-nav .logo {
+
+/* Logo */
+.logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
+  cursor: pointer;
+  user-select: none;
 }
 
 #logoo {
-  padding: 11px 0;
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  text-align: center;
-  position: relative;
-  color: black;
+  font-family:  sans-serif;
+  color: #0b0161;
   font-size: 35px;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
-/* ---- FIN NAVBAR ---- */
+#logoo:hover {
+  color: #1c1187;
+}
 
-/* --- Configuracion del formulario  */
-form { 
-  border-radius: 4px; /* Bordes redondeados */
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra sutil */
+/* Menú de enlaces */
+.secondary-full {
   display: flex;
-  flex-direction: column; 
-  flex-wrap: nowrap;
-  align-items: stretch;
-  top: 0;
-  left: 0;
-  height: auto;
-  margin: 30px;
-  border-radius: 4px;
+  gap: 2rem;
 }
 
-input[type="text"], input[type="password"] {
-  padding: 15px;
-  border: 1px solid #ccc; /* Borde sutil */
-  border-radius: 4px; /* Bordes ligeramente redondeados */
-  font-size: 15px; /* Tamaño de texto adecuado */
+.secondary-full a {
+  font-size: 20px;
+  color: #0b0161;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 12px 18px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 }
 
-button {
-  background-color: #0c0547; /* Color azul para el botón */
-  color: white;
-  padding: 7px 30px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer; /* Cursor tipo puntero para indicar clic */
-  font-size: 15px;
-  /* font-weight: bold; */
+.secondary-full a:hover,
+.secondary-full a:focus {
+  transform: scale(1.1);
+  color: #1c1187;
+  background-color: rgba(11, 1, 97, 0.1);
+  outline: none;
 }
 
-button:hover {
-  background-color: #2431c0; /* Cambio de color al pasar el mouse */
+/* Media query para móvil */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .secondary-full {
+    gap: 1rem;
+  }
+  #logoo {
+    font-size: 28px;
+  }
+  .secondary-full a {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
 }
-
-
-
-
 
 /* Estilos Base para dispositivos móviles */
 @media (max-width: 768px) {

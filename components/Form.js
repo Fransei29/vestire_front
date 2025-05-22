@@ -67,9 +67,14 @@ function Form() {
         </div>
 
         <div>
-          <h2 className="Newform">
-            Discover the new in <strong>Vestiré</strong>
-          </h2>
+          
+          <p className="NewformMain">
+            Vestiré
+          </p>
+          <p className="Newform">
+            Discover the new
+          </p>
+          
         </div>
       </div>
     </div>

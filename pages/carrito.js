@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
 // Definición de la CLASE Producto
@@ -104,19 +103,27 @@ export default function Carrito() {
                         ))}
                     </div>
 
-                    <div id='carro' className="Carrito">
-                        <h2 className="titleCarro">Your Shopping Cart</h2>
-                        <h1 className='icon-carrito'><FontAwesomeIcon icon={faCartShopping} /></h1>
-                        <ul id="cartItems">
-                            {cart.map((product, index) => (
-                                <li key={index}>
-                                    {product.nombre} [ {product.cantidad} ]
+                    <div id="carro" className="Carrito">
+                        <h2 className="titleCarro">🛒 Cart</h2>
+                        {cart.length === 0 ? (
+                            <p className="emptyCart">Your cart is empty</p>
+                        ) : (
+                            <>
+                            <ul id="cartItems">
+                                {cart.map((product, index) => (
+                                <li key={index} className="cart-item">
+                                    <span className="product-name">{product.nombre}</span>
+                                    <span className="product-qty">× {product.cantidad}</span>
+                                    <span className="product-price">${(product.precio * product.cantidad).toFixed(2)}</span>
                                 </li>
-                            ))}
-                        </ul>
-                        <p id="totalPrice">Total: ${totalPrice}</p>
-                        <button id="comprar-btn" onClick={handleComprar}>Buy</button>
-                    </div>
+                                ))}
+                            </ul>
+                            <p id="totalPrice">Total: ${totalPrice.toFixed(2)}</p>
+                            <button id="comprar-btn" className="buttonplace" onClick={handleComprar}>Checkout</button>
+                            </>
+                        )}
+                        </div>
+
                 </div>
     );
 }

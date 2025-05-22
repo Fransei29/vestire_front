@@ -2,6 +2,7 @@ import React from 'react';
 
 function About() {
   return (
+    <section className='AboutContainer'>
     <div className="About" id='Notro'>
           <h2>About Us</h2>
           <p className="textoAbout">
@@ -14,6 +15,7 @@ function About() {
           atmosphere in Villa del Rosario.
           </p>
     </div>
+    </section>
   );
 }
 
